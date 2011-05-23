@@ -1,3 +1,7 @@
+Changes in version 1.3-OSC (23-May-2011)
+- Added OSC messages to list view
+- Added OSC checkbox to activate OSC messages in "debug" tab at the configuration.
+
 Changes in version 1.3 (1 Mar 2011)
 
 - Feature request 2873824: Flip Passes.
