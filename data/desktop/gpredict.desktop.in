@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Gredict
+Comment=Satellite tracker
+Exec=gpredict
+Icon=gpredict-icon
+Terminal=false
+Type=Application
+Categories=HamRadio;Science;Astronomy;Education;Network;
