@@ -500,7 +500,20 @@ gtk-sat-module.o: gtk-sat-module.c /usr/include/gtk-2.0/gtk/gtk.h \
  /usr/include/goocanvas-1.0/goocanvastext.h \
  /usr/include/goocanvas-1.0/goocanvaswidget.h gtk-polar-view.h \
  gtk-single-sat.h gtk-event-list.h gtk-rig-ctrl.h radio-conf.h \
- trsp-conf.h gtk-rot-ctrl.h rotor-conf.h gtk-sky-glance.h compat.h
+ trsp-conf.h gtk-rot-ctrl.h rotor-conf.h gtk-sky-glance.h compat.h \
+ /usr/include/lo/lo.h /usr/include/lo/lo_endian.h \
+ /usr/lib/gcc/i486-linux-gnu/4.5.2/include/stdint.h /usr/include/stdint.h \
+ /usr/include/bits/wchar.h /usr/include/netinet/in.h \
+ /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
+ /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/in.h /usr/include/lo/lo_types.h /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/bits/netdb.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/setjmp.h /usr/include/lo/lo_osc_types.h \
+ /usr/include/lo/lo_errors.h /usr/include/lo/lo_lowlevel.h \
+ /usr/include/lo/lo_macros.h
 
 /usr/include/gtk-2.0/gtk/gtk.h:
 
@@ -1731,3 +1744,59 @@ rotor-conf.h:
 gtk-sky-glance.h:
 
 compat.h:
+
+/usr/include/lo/lo.h:
+
+/usr/include/lo/lo_endian.h:
+
+/usr/lib/gcc/i486-linux-gnu/4.5.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/bits/in.h:
+
+/usr/include/lo/lo_types.h:
+
+/usr/include/netdb.h:
+
+/usr/include/rpc/netdb.h:
+
+/usr/include/bits/netdb.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/lo/lo_osc_types.h:
+
+/usr/include/lo/lo_errors.h:
+
+/usr/include/lo/lo_lowlevel.h:
+
+/usr/include/lo/lo_macros.h:

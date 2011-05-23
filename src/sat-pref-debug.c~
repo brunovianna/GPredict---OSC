@@ -208,7 +208,7 @@ sat_pref_debug_ok     ()
           sat_cfg_set_int (SAT_CFG_INT_LOG_LEVEL,
                                gtk_combo_box_get_active (GTK_COMBO_BOX (level)));
 
-	  sat_cfg_set_bool(SAT_CFG_BOOL_SEND_OSC, gtk_toggle_button_get_active (GTK_CHECK_BUTTON (osccheck)));
+	  sat_cfg_set_bool(SAT_CFG_BOOL_SEND_OSC, gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (osccheck)));
 
           switch (num) {
 

@@ -46,7 +46,6 @@
 #ifdef HAVE_CONFIG_H
 #  include <build-config.h>
 #endif
-#include "lo/lo.h"
 
 
 
@@ -625,20 +624,6 @@ sat_list_update_sats (GtkTreeModel *model,
                             SAT_LIST_COL_ORBIT, sat->orbit,
                             -1);
 	
-	/* ************************************************************************* */
-        /* ************************************************************************* */
-        /* ******************************* HACK ************************************ */
-        /* ************************************************************************* */
-        /* ************************************************************************* */
-
-	/* OSC Data */
-	if (sat_cfg_get_bool(SAT_CFG_BOOL_SEND_OSC) == TRUE) {
-		lo_address t = lo_address_new(NULL, "7770");
-		if (lo_send(t, "/gpredict/sats", "sffff", sat->nickname, sat->az, sat->el, sat->alt, sat->velo) == -1)
-			printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
-		lo_address_free (t);
-	}
-
         /* doppler shift @ 100 MHz */
         if (satlist->flags & SAT_LIST_FLAG_DOPPLER) {
             doppler = -100.0e06 * (sat->range_rate / 299792.4580); // Hz

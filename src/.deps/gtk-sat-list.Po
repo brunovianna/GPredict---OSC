@@ -478,20 +478,7 @@ gtk-sat-list.o: gtk-sat-list.c /usr/include/gtk-2.0/gtk/gtk.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/alloca.h gtk-sat-list.h gtk-sat-data.h qth-data.h sat-log.h \
  config-keys.h sat-cfg.h mod-cfg-get-param.h gtk-sat-list-popup.h \
- gpredict-utils.h locator.h sat-vis.h sat-info.h ../build-config.h \
- /usr/include/lo/lo.h /usr/include/lo/lo_endian.h \
- /usr/lib/gcc/i486-linux-gnu/4.5.2/include/stdint.h /usr/include/stdint.h \
- /usr/include/bits/wchar.h /usr/include/netinet/in.h \
- /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/bits/uio.h \
- /usr/include/bits/socket.h /usr/include/bits/sockaddr.h \
- /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
- /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
- /usr/include/bits/in.h /usr/include/lo/lo_types.h /usr/include/netdb.h \
- /usr/include/rpc/netdb.h /usr/include/bits/netdb.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
- /usr/include/bits/setjmp.h /usr/include/lo/lo_osc_types.h \
- /usr/include/lo/lo_errors.h /usr/include/lo/lo_lowlevel.h \
- /usr/include/lo/lo_macros.h
+ gpredict-utils.h locator.h sat-vis.h sat-info.h ../build-config.h
 
 /usr/include/gtk-2.0/gtk/gtk.h:
 
@@ -1652,59 +1639,3 @@ sat-vis.h:
 sat-info.h:
 
 ../build-config.h:
-
-/usr/include/lo/lo.h:
-
-/usr/include/lo/lo_endian.h:
-
-/usr/lib/gcc/i486-linux-gnu/4.5.2/include/stdint.h:
-
-/usr/include/stdint.h:
-
-/usr/include/bits/wchar.h:
-
-/usr/include/netinet/in.h:
-
-/usr/include/sys/socket.h:
-
-/usr/include/sys/uio.h:
-
-/usr/include/bits/uio.h:
-
-/usr/include/bits/socket.h:
-
-/usr/include/bits/sockaddr.h:
-
-/usr/include/asm/socket.h:
-
-/usr/include/asm-generic/socket.h:
-
-/usr/include/asm/sockios.h:
-
-/usr/include/asm-generic/sockios.h:
-
-/usr/include/bits/in.h:
-
-/usr/include/lo/lo_types.h:
-
-/usr/include/netdb.h:
-
-/usr/include/rpc/netdb.h:
-
-/usr/include/bits/netdb.h:
-
-/usr/include/pthread.h:
-
-/usr/include/sched.h:
-
-/usr/include/bits/sched.h:
-
-/usr/include/bits/setjmp.h:
-
-/usr/include/lo/lo_osc_types.h:
-
-/usr/include/lo/lo_errors.h:
-
-/usr/include/lo/lo_lowlevel.h:
-
-/usr/include/lo/lo_macros.h:
