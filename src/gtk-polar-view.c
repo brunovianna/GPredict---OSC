@@ -46,7 +46,8 @@
 #endif
 #include <goocanvas.h>
 
-
+/* for OSC */
+#include "lo/lo.h"
 
 #define POLV_DEFAULT_SIZE 100
 #define POLV_DEFAULT_MARGIN 25
@@ -747,6 +748,20 @@ gtk_polar_view_update          (GtkWidget  *widget)
                         buff = g_strdup_printf (_("Next: %s\nin %s%d%s%d"),
                                                 sat->nickname, cm, m, cs, s);
                     
+                    /* ************************************************************************* */
+                    /* ************************************************************************* */
+                    /* ******************************* HACK ************************************ */
+                    /* ************************************************************************* */
+                    /* ************************************************************************* */
+
+                    /* OSC Data */
+                    if (sat_cfg_get_bool(SAT_CFG_BOOL_SEND_OSC) == TRUE) {
+	                lo_address t = lo_address_new(NULL, "7770");
+	                if (lo_send(t, "/gpredict/sats/next", "sffffiii", sat->nickname, sat->az, sat->el, sat->alt, sat->velo, h, m, s) == -1)
+		                printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
+	                lo_address_free (t);
+                    }
+
                     
                     g_object_set (polv->next,
                                   "text", buff,
