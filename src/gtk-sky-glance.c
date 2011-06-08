@@ -109,6 +109,9 @@ static void create_sat (gpointer key, gpointer value, gpointer data);
 
 static gdouble t2x (GtkSkyGlance *skg, gdouble t);
 static gdouble x2t (GtkSkyGlance *skg, gdouble x);
+
+float jul_to_time_t(gdouble j);
+
 static gchar *time_to_str (gdouble julutc);
 
 
@@ -1077,8 +1080,8 @@ create_sat (gpointer key, gpointer value, gpointer data)
                 /* OSC Data sending out the passes*/
                 if (sat_cfg_get_bool(SAT_CFG_BOOL_SEND_OSC) == TRUE) {
 	            lo_address t = lo_address_new(NULL, "7770");
-	            if (lo_send(t, "/gpredict/passes", "sfffffff", skypass->pass->satname, (float)skypass->pass->aos, skypass->pass->aos_az, 
-                    (float)skypass->pass->tca, skypass->pass->maxel_az, skypass->pass->max_el, (float)skypass->pass->los, skypass->pass->los_az) == -1)
+	            if (lo_send(t, "/gpredict/passes", "sfffffff", skypass->pass->satname, jul_to_time_t(skypass->pass->aos), skypass->pass->aos_az, 
+                    jul_to_time_t(skypass->pass->tca), skypass->pass->maxel_az, skypass->pass->max_el, jul_to_time_t(skypass->pass->los), skypass->pass->los_az) == -1)
 		            printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
 	            lo_address_free (t);
                 }
@@ -1105,6 +1108,13 @@ create_sat (gpointer key, gpointer value, gpointer data)
     }
 }
 
+
+/* convert julian date to struct time_t */
+float jul_to_time_t(gdouble j) {
+    float t;
+    t = (float)(j - 2440587.5)*86400.;
+    return t;
+}
 
 
 /** \brief Convert "jul_utc" time to formatted string
