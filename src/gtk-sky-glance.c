@@ -1031,7 +1031,7 @@ create_sat (gpointer key, gpointer value, gpointer data)
     if (passes != NULL) {
 
         if (sat_cfg_get_bool(SAT_CFG_BOOL_SEND_OSC) == TRUE) {
-            lo_address t = lo_address_new(NULL, "7770");
+            lo_address t = lo_address_new(NULL, "7771");
             if (lo_send(t, "/gpredict/pass/start", "i", 1) == -1)  
                 printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
             lo_address_free (t);
@@ -1087,15 +1087,19 @@ create_sat (gpointer key, gpointer value, gpointer data)
 
                 /* OSC Data sending out the passes*/
                 if (sat_cfg_get_bool(SAT_CFG_BOOL_SEND_OSC) == TRUE) {
-                    lo_address t = lo_address_new(NULL, "7770");
+                    lo_address t = lo_address_new(NULL, "7771");
     	            if (lo_send(t, "/gpredict/pass", "siiiiiii", skypass->pass->satname, jul_to_time_t(skypass->pass->aos), (int)skypass->pass->aos_az, 
                     jul_to_time_t(skypass->pass->tca), (int)skypass->pass->maxel_az, (int)skypass->pass->max_el, jul_to_time_t(skypass->pass->los), (int)skypass->pass->los_az) == -1)
 		                printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
                     num = g_slist_length (skypass->pass->details);
                     /* sending the details of each pass */
                     for (i = 0; i < num; i++) {
+
+                    	//float doppler = -100.0e06 * (detail->range_rate / 299792.4580); // Hz
+
+
                         detail = PASS_DETAIL(g_slist_nth_data (skypass->pass->details, i));
-                        if (lo_send(t, "/gpredict/pass/detail", "iii",jul_to_time_t(detail->time), (int)detail->az, (int)detail->el) == -1)
+                        if (lo_send(t, "/gpredict/pass/detail", "iiii",jul_to_time_t(detail->time), (int)detail->az, (int)detail->el, (int)(detail->range_rate * 100.)) == -1)
                             printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
                         //printf("detail: %d, time: %f\n", i, detail->time);
                     }
@@ -1113,7 +1117,7 @@ create_sat (gpointer key, gpointer value, gpointer data)
         }
 
         if (sat_cfg_get_bool(SAT_CFG_BOOL_SEND_OSC) == TRUE) {  
-            lo_address t = lo_address_new(NULL, "7770");     
+            lo_address t = lo_address_new(NULL, "7771");     
             if (lo_send(t, "/gpredict/pass/done", "i", 1) == -1)  
                 printf("OSC error %d: %s\n", lo_address_errno(t), lo_address_errstr(t));
             lo_address_free (t);
